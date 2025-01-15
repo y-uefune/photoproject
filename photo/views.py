@@ -85,12 +85,12 @@ class MypageView(ListView):
 
         return queryset
     
-    class PhotoDeleteView(DeleteView):
-        template_name ='photo_delete.html'
-        model = PhotoPost
+class PhotoDeleteView(DeleteView):
+    template_name ='photo_delete.html'
+    model = PhotoPost
 
-        # 処理完了後にマイページにリダイレクト
-        success_url = reverse_lazy('photo:mypage')
+    # 処理完了後にマイページにリダイレクト
+    success_url = reverse_lazy('photo:mypage')
 
     def delete(self, request, *args, **kwargs):
         # スーパークラスのdelete()を実行
